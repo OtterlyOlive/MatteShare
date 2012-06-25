@@ -18,6 +18,7 @@ while(<FILE>) {
 $git_remote_repo = "";
 $local_folder = "/Users/Eax/Perl/MatteShare";
 
+# Change this name
 sub updated {
 	print "Called.";
 #	system("cd ".$local_folder." && git add . && git commit -m ");
