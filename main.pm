@@ -7,6 +7,8 @@ open FILE, "config" or die $!;
 
 while(<FILE>) {
 	@temp = split(/=/, $_);
+	chomp($temp[0]);
+	chomp($temp[1]);
 	$config{ $temp[0] } = $temp[1];
 }
 
