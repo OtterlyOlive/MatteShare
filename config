@@ -1,5 +1,5 @@
 repo_dir=/Users/Eax/Perl/MatteShare
 last_updated=Fri, 22 Jun 2012 12:47:43 +0200
 command=date "+%Y-%m-%d %H:%M:%S"
-find_command=find . -newerct 'Fri, 22 Jun 2012 12:47:43 +0200'
-find_second_command=hi
+find_command=find . -newerct '2012-06-28 17:38:32'
+find_second_command=ind . -newerBt '2012-06-28 17:38:32'
