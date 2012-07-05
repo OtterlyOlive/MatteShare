@@ -1,7 +1,10 @@
 # Hi and welcome to whateverthisis.
 package main;
 
-open FILE, "config" or die $!;
+open FILE, "config.cnf" or die $!;
+
+print FILE;
+die "end";
 
 %config = ();
 
@@ -16,13 +19,25 @@ while(<FILE>) {
 #print "Repo dir is: ".$config{'repo_dir'};
 #print "Date command is: ".$config{'command'};
 
-# Variables:
-$git_remote_repo = "";
-$local_folder = "/Users/Eax/Perl/MatteShare";
-
 # Change this name
-sub updated {
-	print "Called.";
-#	system("cd ".$local_folder." && git add . && git commit -m ");
-	print "Done";
+sub change_made {
+	$file = $_[0];
+	$action = $_[1];
+
+	if($action eq 'create'){
+		$message = " has been modified.";
+	} elsif($action eq 'delete'){
+		$message = " has been deleted.";
+	} elsif($action eq 'modify'){
+		$message = " has been modified.";
+	} elsif($action eq 'moved_to'){
+		$message = " has been moved to this directory.";
+	} elsif($action eq 'moved_from'){
+		$message = " has been moved from this directory.";
+	}
+
+	$message = $file.$message;
+
+	$cmd = "cd ".$config{'repo_dir'}." && git add . && git commit -m '".$message."'";
+	$cr = `$cmd`;
 }
