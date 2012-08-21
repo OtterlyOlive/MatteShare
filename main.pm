@@ -3,8 +3,8 @@ package main;
 
 open FILE, "config.cnf" or die $!;
 
-print FILE;
-die "end";
+# print FILE;
+# die "end";
 
 %config = ();
 
@@ -41,3 +41,5 @@ sub change_made {
 	$cmd = "cd ".$config{'repo_dir'}." && git add . && git commit -m '".$message."'";
 	$cr = `$cmd`;
 }
+
+return true;

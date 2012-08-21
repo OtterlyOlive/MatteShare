@@ -1,4 +1,4 @@
-repo_dir=/home/eax/perl/MatteShare/subject
+repo_dir=/Users/Eax/Perl/MatteShare/subject
 last_updated=Fri, 22 Jun 2012 12:47:43 +0200
 command=date "+%Y-%m-%d %H:%M:%S"
 find_command=find . -newerct '2012-06-28 17:38:32'
