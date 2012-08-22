@@ -82,4 +82,6 @@ for ($i = 0; $i < scalar(@files_to_commit); $i++) {
 	$x =~ s/.\///; # Replace ./ with nothing.
 	$add_command = "$i - git add ".$x." && git commit -m 'File: ".$x." has been ".$y."' && git push";
 	$log = ´$add_command´;
+
+	# REMEMBER TO UPDATE CONFIG FILE!!!
 }
