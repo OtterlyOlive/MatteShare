@@ -27,6 +27,12 @@ while () {
 	} elsif($events[0]->IN_MODIFY){
 		print $events[0]->fullname." has been modified.\n";
 	#	change_made($events[0]->fullname, 'modify');
+	} elsif($events[0]->IN_OPEN){
+		print $events[0]->fullname." has been opened.\n";
+	} elsif($events[0]->IN_ACCESS){
+		print $events[0]->fullname." has been accessed?.\n";
+	} elsif($events[0]->IN_DELETE){
+		print $events[0]->fullname." has been deleted!\n";
 	} else {
 		print "Changes on: ".$events[0]->fullname."\n";
 	}
