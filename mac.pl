@@ -80,8 +80,17 @@ for ($i = 0; $i < scalar(@files_to_commit); $i++) {
 	$y = $files_to_commit[$i][1];
 	# Add & commit file, when done, push, update config file.
 	$x =~ s/.\///; # Replace ./ with nothing.
-	$add_command = "$i - git add ".$x." && git commit -m 'File: ".$x." has been ".$y."' && git push";
-	$log = ´$add_command´;
+	change_made($x, $y);
+}
 
-	# REMEMBER TO UPDATE CONFIG FILE!!!
+open FILE, ">config.cnf" or die $!; # Overwrite the file.
+
+while ( my ($setting, $value) = each(%config) ) {
+
+	if ($setting eq "last_updated") {
+		$value = `date "+%Y-%m-%d %H:%M:%S"`;
+		chomp($value);
+	}
+
+	print FILE "$setting=$value\n";
 }

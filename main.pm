@@ -24,11 +24,11 @@ sub change_made {
 	$file = $_[0];
 	$action = $_[1];
 
-	if($action eq 'create'){
-		$message = " has been modified.";
-	} elsif($action eq 'delete'){
+	if($action eq 'created'){
+		$message = " has been created.";
+	} elsif($action eq 'deleted'){
 		$message = " has been deleted.";
-	} elsif($action eq 'modify'){
+	} elsif($action eq 'edited'){
 		$message = " has been modified.";
 	} elsif($action eq 'moved_to'){
 		$message = " has been moved to this directory.";
@@ -37,9 +37,8 @@ sub change_made {
 	}
 
 	$message = $file.$message;
-
-	$cmd = "cd ".$config{'repo_dir'}." && git add . && git commit -m '".$message."'";
-	$cr = `$cmd`;
+	$add_command = "cd ".$config{'repo_dir'}." && git add ".$x." && git commit -m 'File: ".$message."'"; #  && git push
+	$log = `$add_command`;
 }
 
 return true;
