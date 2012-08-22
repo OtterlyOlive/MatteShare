@@ -4,11 +4,14 @@ $i = 0;
 
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 
-# Read the config file - V
+# Check if there's any changes on the remote.
+
+get_changes();
+
 # Take all files made after last edit.
 # Check if they're edited or created
 # Make list of all the files.
-# Run the commit function. (Also rename it)
+# Run the change_made(); <- Function that commits.
 
 $find_created = 'cd '.$config{'repo_dir'}.' && find . -newerBt "'.$config{'last_updated'}.'"';
 @created_files = `$find_created`;
@@ -24,11 +27,12 @@ if(scalar($created_files)){
 
 foreach (@created_files) {
 	$result = index($_, '.git');
+
 	if($result == -1) {
 		# Loop through all already committed files, and check if this one has already been added.
 		
 		if ($_ ne ".") {
-			# Push value to commit list. (Do we commit one file at a time or all of them? Logically, I'd speak for one at at time, to make it easier to revert without loosing data.)
+			# Push value to commit list.
 			chomp($_);
 			$files_to_commit[$length][0] = $_;
 			$files_to_commit[$length][1] = 'created';
