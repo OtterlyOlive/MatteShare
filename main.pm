@@ -43,8 +43,8 @@ sub change_made {
 }
 
 sub get_changes {
-#	$get_command = "cd ".$config{'repo_dir'}." && git pull";
-#	$log = `$get_command`;
+	$get_command = "cd ".$config{'repo_dir'}." && git pull";
+	$log = `$get_command`;
 }
 
 return true;
