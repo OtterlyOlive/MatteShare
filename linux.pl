@@ -1,46 +1,38 @@
 use main;
 use Linux::Inotify2;
 
-# Read the config file.
-
+# Create the notify object.
 my $inotify = new Linux::Inotify2 or die "Unable to create the inotify object: $!";
 
 # Create the watch.
-
 $inotify->watch($config{'repo_dir'}, IN_ALL_EVENTS)
 	or die "Did not create watch. Died instead";
 
+# Event loop.
 while () {
+	$action = "none";
 	my @events = $inotify->read;
 	unless (@events > 0) {
 		print "Read error: $!";
 		last;
 	}
 
-	foreach(@events){
-		print $_->fullname."\n";
-	}
+	# Pull changes before committing our own.
+	get_changes();
 
 	if($events[0]->IN_CREATE){
-	#	change_made($events[0]->fullname, 'create');
-		print $events[0]->fullname." has been created.\n";
+		$action = "created";
 	} elsif($events[0]->IN_MODIFY){
-		print $events[0]->fullname." has been modified.\n";
-	#	change_made($events[0]->fullname, 'modify');
-	} elsif($events[0]->IN_OPEN){
-		print $events[0]->fullname." has been opened.\n";
-	} elsif($events[0]->IN_ACCESS){
-		print $events[0]->fullname." has been accessed?.\n";
+		$action = "edited";
+	} elsif($events[0]->IN_MOVED_FROM){
+		$action = "moved_from";
+	} elsif($events[0]->IN_MOVED_TO){
+		$action = "moved_to";
 	} elsif($events[0]->IN_DELETE){
-		print $events[0]->fullname." has been deleted!\n";
-	} else {
-		print "Changes on: ".$events[0]->fullname."\n";
+		$action = "deleted";
 	}
 
-	print "Amount of changes: ".scalar(@events)."\n";
-	print "===========================================================\n";
-
-	#if($events[0]->IN_MODIFY){
-	#	print $events[0]->fullname." has been modified.\n";	
-	#}
+	if ($action ne "none") {
+		change_made($events[0]->fullname, $action);
+	}
 }

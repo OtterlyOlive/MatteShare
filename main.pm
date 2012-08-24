@@ -31,19 +31,20 @@ sub change_made {
 	} elsif($action eq 'edited'){
 		$message = " has been modified.";
 	} elsif($action eq 'moved_to'){
-		$message = " has been moved to this directory.";
+		$message = " has been moved to this folder from another.";
 	} elsif($action eq 'moved_from'){
-		$message = " has been moved from this directory.";
+		$message = " has been moved from this folder to another.";
 	}
 
 	$message = $file.$message;
-	$add_command = "cd ".$config{'repo_dir'}." && git add ".$x." && git commit -m 'File: ".$message."'"; #  && git push
+
+	$add_command = "cd ".$config{'repo_dir'}." && git add ".$file." && git commit -m 'File: ".$message."'"; #  && git push
 	$log = `$add_command`;
 }
 
 sub get_changes {
-	$get_command = "cd ".$config{'repo_dir'}." && git pull";
-	$log = `$get_command`;
+#	$get_command = "cd ".$config{'repo_dir'}." && git pull";
+#	$log = `$get_command`;
 }
 
 return true;
