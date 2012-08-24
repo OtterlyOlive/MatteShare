@@ -1,5 +1,9 @@
 A SparkleShare like app made in Perl, for Mac & Linux.
 
-Initially this project will only work on Mac OSX, but it is in the works to add Linux support ASAP.
+Now supports both Linux and Mac.
 
-Currently adding Linux support.
+To Do:
+* Find out how to handle git merge conflicts
+* Make log files
+* Enable pulling from remote
+
