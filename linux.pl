@@ -15,10 +15,7 @@ while () {
 	unless (@events > 0) {
 		print "Read error: $!";
 		last;
-	}
-
-	# Pull changes before committing our own.
-	get_changes();
+	}	
 
 	if($events[0]->IN_CREATE){
 		$action = "created";

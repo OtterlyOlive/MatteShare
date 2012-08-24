@@ -6,8 +6,6 @@ my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 
 # Check if there's any changes on the remote.
 
-get_changes();
-
 # Take all files made after last edit.
 # Check if they're edited or created
 # Make list of all the files.
