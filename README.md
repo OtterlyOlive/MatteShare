@@ -11,8 +11,8 @@ How do I run this?
 
 1. Download.
 2. Change config.cnf to your liking.
-3 Fire up a terminal, cd to the MatteShare folder and run:
-	perl linux.pl
+3. Fire up a terminal, cd to the MatteShare folder and run:
+    perl linux.pl
 
 
 ## Mac:
@@ -20,7 +20,7 @@ How do I run this?
 1. Download.
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
-	perl mac.pl
+    perl mac.pl
 
 
 Guide to config.cnf:
@@ -39,4 +39,3 @@ To Do:
 * Find out how to handle git merge conflicts
 * Make log files
 * Enable pulling from remote
-
