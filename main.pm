@@ -38,7 +38,7 @@ sub change_made {
 
 	$message = $file.$message;
 
-	$add_command = "cd ".$config{'repo_dir'}." && git add ".$file." && git commit -m 'File: ".$message."' && git push";
+	$add_command = "cd ".$config{'repo_dir'}." && git add ".$file." && git commit -m 'File: ".$message."'"; #  && git push
 	$log = `$add_command`;
 }
 

@@ -31,5 +31,19 @@ while () {
 
 	if ($action ne "none") {
 		change_made($events[0]->fullname, $action);
+
+			open FILE, ">config.cnf" or die $!; # Overwrite the file.
+
+			while ( my ($setting, $value) = each(%config) ) {
+
+				if ($setting eq "last_updated") {
+					$value = `date`;
+					chomp($value);
+				}
+
+				print FILE "$setting=$value\n";
+			}
+
+			close (FILE);
 	}
 }
