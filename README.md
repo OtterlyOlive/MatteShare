@@ -25,9 +25,9 @@ How do I run this?
 
 Guide to config.cnf:
 --------------------
-* last_updated ### <- DO NOT FUCK WITH THIS LINE.
-* repo_dir ### <- Directory of your git repository, the one that should be watched.
-* sleep_time ### <- MAC ONLY. Time between the program should run itself (not implemented)
+* last_updated <- DO NOT FUCK WITH THIS LINE.
+* repo_dir <- Directory of your git repository, the one that should be watched.
+* sleep_time <- MAC ONLY. Time between the program should run itself (not implemented)
 
 
 To Do:
