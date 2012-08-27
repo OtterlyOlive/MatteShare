@@ -12,6 +12,7 @@ How do I run this?
 1. Download.
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
+
     perl linux.pl
 
 
@@ -20,6 +21,7 @@ How do I run this?
 1. Download.
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
+
     perl mac.pl
 
 
