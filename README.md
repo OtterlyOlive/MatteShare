@@ -34,6 +34,6 @@ To Do:
 ------
 
 * Handle deletion of files!
-* Find out how to handle git merge conflicts
-* Make log files
-* Enable pulling from remote
+* Make Mac version lighter
+* Find out how to handle git merge conflicts?
+* Make log files?
