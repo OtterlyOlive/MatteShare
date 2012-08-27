@@ -13,7 +13,7 @@ How do I run this?
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
 
-    perl linux.pl
+`perl linux.pl`
 
 
 ## Mac:
@@ -22,7 +22,7 @@ How do I run this?
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
 
-    perl mac.pl
+`perl mac.pl`
 
 
 Guide to config.cnf:
