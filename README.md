@@ -7,7 +7,7 @@ Now supports both Linux and Mac.
 
 How do I run this?
 ------------------
-## Linux:
+### Linux:
 
 1. Download.
 2. Change config.cnf to your liking.
@@ -15,7 +15,7 @@ How do I run this?
 `perl linux.pl`
 
 
-## Mac:
+### Mac:
 
 1. Download.
 2. Change config.cnf to your liking.
