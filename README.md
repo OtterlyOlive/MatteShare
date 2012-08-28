@@ -8,7 +8,6 @@ Now supports both Linux and Mac.
 How do I run this?
 ------------------
 ### Linux:
-
 1. Download.
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:
@@ -16,7 +15,6 @@ How do I run this?
 
 
 ### Mac:
-
 1. Download.
 2. Change config.cnf to your liking.
 3. Fire up a terminal, cd to the MatteShare folder and run:

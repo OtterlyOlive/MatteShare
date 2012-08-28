@@ -92,7 +92,5 @@ while(1) {
 	}
 	close (FILE);
 
-
-	print "Done!";
 	sleep($config{'sleep_time'});
 }

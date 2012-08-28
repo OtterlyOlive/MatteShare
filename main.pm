@@ -3,9 +3,6 @@ package main;
 
 open FILE, "config.cnf" or die $!;
 
-# print FILE;
-# die "end";
-
 %config = ();
 
 while(<FILE>) {
@@ -14,10 +11,6 @@ while(<FILE>) {
 	chomp($temp[1]);
 	$config{ $temp[0] } = $temp[1];
 }
-
-#print "Last updated: ".$config{'last_updated'};
-#print "Repo dir is: ".$config{'repo_dir'};
-#print "Date command is: ".$config{'command'};
 
 # Change this name
 sub change_made {
@@ -38,7 +31,7 @@ sub change_made {
 
 	$message = $file.$message;
 
-	$add_command = "cd ".$config{'repo_dir'}." && git add ".$file." && git commit -m 'File: ".$message."'"; #  && git push
+	$add_command = "cd ".$config{'repo_dir'}." && git add ".$file." && git commit -m 'File: ".$message."' && git push"; #  
 	$log = `$add_command`;
 }
 
